@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.laboratorio1.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_registro"
+        android:name="com.example.laboratorio1.ui.registro.RegistroFragment"
+        android:label="@string/menu_registro"
+        tools:layout="@layout/fragment_registro" />
+
+    <fragment
+        android:id="@+id/nav_peliculas"
+        android:name="com.example.laboratorio1.ui.peliculas.PeliculasFragment"
+        android:label="@string/menu_peliculas"
+        tools:layout="@layout/fragment_peliculas" >
+        <action
+            android:id="@+id/action_nav_peliculas_to_detallePeliculaFragment"
+            app:destination="@id/nav_detalle_pelicula" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detalle_pelicula"
+        android:name="com.example.laboratorio1.ui.peliculas.DetallePeliculaFragment"
+        android:label="@string/detalle_pelicula"
+        tools:layout="@layout/fragment_detalle_pelicula" >
+        <argument
+            android:name="pelicula"
+            app:argType="com.example.laboratorio1.model.Pelicula" />
+    </fragment>
+</navigation>
